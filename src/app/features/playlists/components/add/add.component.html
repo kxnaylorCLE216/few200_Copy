@@ -5,12 +5,24 @@
     <input class="form-control"
            formControlName="title"
            id="title">
+    <div class="alert alert-danger"
+         *ngIf="title?.errors && (title?.touched || title?.dirty)">
+      <p *ngIf="title?.errors?.required">We need a title, yo!</p>
+    </div>
   </div>
   <div class="form-group">
     <label for="artist">Artist</label>
     <input class="form-control"
            formControlName="artist"
            id="artist">
+    <div class="alert alert-danger"
+         *ngIf="artist?.errors && (artist?.touched || artist?.dirty)">
+      <p *ngIf="artist?.errors?.required">We need an artist, please!</p>
+      <p *ngIf="artist?.errors?.maxlength">No artist has a name that long! less than {{
+        artist?.errors?.maxlength?.requiredLength }}
+        letters please!</p>
+      <pre>{{ artist?.errors | json }}</pre>
+    </div>
   </div>
   <div class="form-group">
     <label for="album">Album</label>
@@ -21,7 +33,3 @@
   <button type="submit"
           class="btn btn-success">Add To Playlist</button>
 </form>
-
-<pre>
-  {{ form?.value | json }}
-</pre>

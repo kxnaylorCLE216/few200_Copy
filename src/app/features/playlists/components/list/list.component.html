@@ -2,16 +2,16 @@
   <h4>Your Playlist</h4>
 </header>
 <ul class="list-unstyled">
-  <li class="alert alert-info">
-    <p>Song SongName By Artist On Album Album</p>
-    <div>
+  <li class="alert"
+      [ngClass]="{ 'alert-info': song.played, 'alert-success': !song.played, 'alert-danger': song.isTemporary}"
+      *ngFor="let song of model$ | async">
+    <p>Song {{song.title}} By {{song.artist}} On Album {{song.album}}</p>
+    <div *ngIf="!song.played && !song.isTemporary">
       <button class="btn btn-primary btn-sm">Mark Played</button>
     </div>
-  </li>
-  <li class="alert alert-success">
-    <p>Song SongName By Artist On Album Album</p>
-    <div>
-      <p>You Played This Song!</p>
+    <div *ngIf="song.played ">
+      <p>You've played this song! Good Job!</p>
     </div>
   </li>
+
 </ul>
