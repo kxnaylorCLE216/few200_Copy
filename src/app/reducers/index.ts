@@ -6,7 +6,8 @@ import * as fromSettings from './settings.reducer';
 export interface AppState {
   // Just for typescript - interfaces do nothing for JavaScript
   counter: fromCounter.CounterState,
-  settings: fromSettings.SettingsState
+  settings: fromSettings.SettingsState,
+
 }
 
 export const reducers: ActionReducerMap<AppState> = {

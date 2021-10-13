@@ -6,10 +6,12 @@ import { featureName, reducers } from './reducers';
 import { EffectsModule } from '@ngrx/effects';
 import { HttpClientModule } from '@angular/common/http';
 import { SupportEffects } from './effects/support.effects';
+import { StatusDisplayComponent } from './components/status-display/status-display.component';
 
 @NgModule({
   declarations: [
-    SupportComponent
+    SupportComponent,
+    StatusDisplayComponent
   ],
   imports: [
     CommonModule,
