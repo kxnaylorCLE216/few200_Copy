@@ -1,0 +1,14 @@
+<div class="card">
+  <div class="card-header">Counter Settings</div>
+  <div class="card-body">
+    <div class="form-group">
+      <p>Your Goal is Currently {{ goal$ | async }}.</p>
+      <div class="alert alert-danger">BAD ACCESSIBILITY AHEAD</div>
+      <input class="form-control"
+             #goal
+             type="number">
+      <button (click)="goalChanged(goal)"
+              class="btn btn-success">Change My Goal</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div>
+  <button class="btn btn-primary"
+          data-counter-decrement-button
+          (click)="decrement()">
+    -
+  </button>
+  <span data-counter-current-span>{{ current$ | async }}</span>
+  <button class="btn btn-primary"
+          data-counter-increment-button
+          (click)="increment()">
+    +
+  </button>
+</div>
+<div>
+  <button (click)="reset()"
+          data-counter-reset-button
+          [disabled]="resetDisabled$ | async"
+          class="btn btn-danger">
+    Reset
+  </button>
+</div>

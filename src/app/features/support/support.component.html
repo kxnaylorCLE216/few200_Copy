@@ -1,0 +1,10 @@
+<div class="card">
+  <div class="card-header">
+    Support is <span *ngIf="model.currentlyOpen">open!</span>
+    <span *ngIf="!model.currentlyOpen">Closed</span>
+  </div>
+  <div class="card-body">
+    <p>The Status is: {{model.status}}</p>
+    <p>For Help: {{ model.supportContact.name }}</p>
+  </div>
+</div>
